@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.atharvakango.testapp">
+
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission
+        android:name="android.permission.WRITE_EXTERNAL_STORAGE"
+        android:maxSdkVersion="28" />
+    <uses-permission
+        android:name="android.permission.READ_EXTERNAL_STORAGE"
+        android:maxSdkVersion="28" />
+
+    <!-- To auto-complete the email text field in the login form with the user's emails -->
+    <uses-permission android:name="android.permission.GET_ACCOUNTS" />
+    <uses-permission android:name="android.permission.READ_PROFILE" />
+    <uses-permission android:name="android.permission.READ_CONTACTS" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="AIzaSyBuPYo7kQrRo7jniNi34hyy7_fnBeDRQNA" />
+
+        <activity
+            android:name=".FullScreen"
+            android:label="@string/app_name"
+            android:theme="@style/AppTheme.NoActionBar">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".ProfileView" />
+        <activity android:name=".Vehices" />
+        <activity android:name=".VehiclesFromNav" />
+        <activity android:name=".MPChartsActivity" />
+        <activity android:name=".MyLocTracker" />
+
+        <!--
+            <meta-data android:name="com.google.android.maps.v2.API_KEY"
+            android:value="AIzaSyAResUKnaxMG_9c5nMMHy8OWV3gQGoNLG0"/>
+        -->
+        <activity android:name=".ContactUs" />
+        <activity android:name=".MainActivity" />
+        <activity
+            android:name=".LoginActivity"
+            android:label="@string/title_activity_login" />
+        <activity android:name=".Register" />
+        <activity android:name=".PiChart"></activity>
+    </application>
+
+</manifest>

@@ -1,0 +1,84 @@
+<!doctype html>
+<html>
+
+<head>
+	<title>Line Chart</title>
+	<script src="Chart.bundle.js"></script>
+	<script src="utils.js"></script>
+	<style>
+	canvas{
+		-moz-user-select: none;
+		-webkit-user-select: none;
+		-ms-user-select: none;
+	}
+	</style>
+</head>
+
+<body>
+	<div style="width:75%;">
+		<canvas id="canvas"></canvas>
+	</div>
+	<br>
+	<br>
+  <script>
+  var  label1=['January', 'February', 'March', 'April', 'May', 'June', 'July'];
+    var data1=[						randomScalingFactor(),
+    						randomScalingFactor(),
+    						randomScalingFactor(),
+    						randomScalingFactor(),
+    						randomScalingFactor(),
+    						randomScalingFactor(),
+    						randomScalingFactor()
+              ];
+      var config = {
+			type: 'line',
+			data: {
+			labels: label1,
+			datasets: [{
+			label: 'dataset - large pointHoverRadius',
+			data:data1,
+			backgroundColor: window.chartColors.green,
+			borderColor: window.chartColors.green,
+			fill: false,
+			pointHoverRadius: 30,
+				}]
+			},
+			options: {
+				responsive: true,
+				legend: {
+					position: 'bottom',
+				},
+				hover: {
+					mode: 'index'
+				},
+				scales: {
+					xAxes: [{
+						display: true,
+						scaleLabel: {
+							display: true,
+							labelString: 'Month'
+						}
+					}],
+					yAxes: [{
+						display: true,
+						scaleLabel: {
+							display: true,
+							labelString: 'Value'
+						}
+					}]
+				},
+				title: {
+					display: true,
+					text: 'Chart.js Line Chart - Different point sizes'
+				}
+			}
+		};
+
+		window.onload = function() {
+			var ctx = document.getElementById('canvas').getContext('2d');
+			window.myLine = new Chart(ctx, config);
+		};
+	</script>
+</body>
+
+</html>
